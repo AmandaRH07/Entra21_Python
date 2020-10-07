@@ -13,11 +13,12 @@ edicao = "1ª edição"
 autor = "George Orwel"
 publicacao = "17/08/1945"
 
-print(f"""Título: {titulo}
-Edição: {edicao}
-Autor: {autor}
-Data de publicação: {publicacao}\n\n\n
+print("Título: {}".format(titulo))
+print("Edição: {}".format(edicao))
+print("Autor: {}".format(autor))
+print("Data de publicação:  {}".format(publicacao))
 
+print(f"""
     Realmente, era uma discussão violenta. Gritos, socos na mesa, olhares suspeitos, furiosas negativas. A 
 origem do caso, ao que parecia, fora o fato de Napoleão e o Sr. Pilkington haverem, ao mesmo tempo, jogado 
 um ás de espadas.\n

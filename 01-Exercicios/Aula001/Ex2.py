@@ -12,14 +12,14 @@
 #--- Entre o cabeçalho e o menu e entre o menu e o rodapé deverá ter espaçamento de 3 linhas
 #--- Deve ser utilizado os caracteres especiais de quebra de linha e de tabulação
 
-opcao = int(input(f"""
+opcao = int(input("""
 SISTEMA DE CADASTRO DE FUNCIONARIO\n\n\n
-    1 - Cadastrar Funcionário
-    2 - Listar Funcinários
-    3 - Editar Funcionário
-    4 - Deletar Funcionário
-    5 - Sair\n\n\n
-    Escolha uma opção:  """))
+    {} - Cadastrar Funcionário
+    {} - Listar Funcinários
+    {} - Editar Funcionário
+    {} - Deletar Funcionário
+    {} - Sair\n\n\n
+    Escolha uma opção:  """.format(1,2,3,4,5)))
 
 if opcao == 1:
     print("A opção escolhida foi 'Cadastrar funcionário'")

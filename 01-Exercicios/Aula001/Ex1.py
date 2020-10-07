@@ -11,8 +11,9 @@ cpf = input("CPF: ")
 rg = input("RG: ")
 salario = float(input("Salario: "))
 
-print(f"""Nome: {nome}
-Sobrenome: {sobrenome}
-CPF: {cpf}
-RG: {rg}
-Salário: {salario}""")
+print("""
+Nome: {}
+Sobrenome: {}
+CPF: {}
+RG: {}
+Salário: {}""".format(nome, sobrenome, cpf, rg, salario))
