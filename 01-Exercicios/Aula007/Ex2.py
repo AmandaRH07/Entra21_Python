@@ -6,7 +6,7 @@
 
 def divisao(num1, num2):
     if num2 == 0:
-        print("Operação inválida, o divisor não pode ser 0")
+        print("Operação inválida. O divisor não pode ser 0")
     else:
         resultado = num1/num2
         return resultado
