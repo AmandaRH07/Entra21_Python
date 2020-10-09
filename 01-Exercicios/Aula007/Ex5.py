@@ -9,7 +9,7 @@ numero =  int(input("Insira o número: "))
 indice = int(input("Insira o indice: "))
 
 def raiz(num, ind):
-    resultado = num ** ind
+    resultado = num **(1/ind) 
     return resultado
 
 print(f"A raiz de {numero} elevado a {indice} é: {raiz(numero, indice)}")
