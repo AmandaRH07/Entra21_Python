@@ -19,9 +19,27 @@ endereco = [rua, numero, comp, bairro, cidade, estado]
 #Chamada da função;
 enderecoCadastrado = cadastroEndereco(endereco)'''
 
+enderecos = []
 def cadastroEndereco(rua, numero, comp, bairro, cidade, estado):
+    endereco = {}
+    endereco['rua'] = rua
+    endereco['numero'] = numero
+    endereco['complemento'] = comp
+    endereco['bairro'] = bairro
+    endereco['cidade'] = cidade
+    endereco['estado'] = estado
+    enderecos.append(endereco)
     dados_cadastrados_endereco = [rua, numero, comp, bairro, cidade, estado]
     return "Endereço cadastrado com sucesso!"
+
+def mostrarDadosDeEndereco():
+    for i in enderecos:
+        print(i['rua'])
+        print(i['numero'])
+        print(i['complemento'])
+        print(i['bairro'])
+        print(i['cidade'])
+        print(i['estado'])
 
 def id_Endereco(idPessoa, endereco) -> str:
     cadastrado = [idPessoa, endereco]
