@@ -8,7 +8,7 @@
 
 from Ex1 import cadastroPessoa
 from Ex2 import cadastroEndereco
-from Ex3 import listarPesso
+from Ex3 import listarPessoas, pessoaEspecifica
 
 def cabecalho(tipo_de_cadastro):
     print("\n**    CADASTRO DE {}     **".format(tipo_de_cadastro))
@@ -17,6 +17,7 @@ cabecalho("PESSOA")
 nome = input("Nome: ")
 sobrenome = input("Sobrenome: ")
 idade = int(input("Idade: "))
+#idPessoa = int(input("Id: "))
 cadastroPessoa(nome,sobrenome,idade)
 
 cabecalho("ENDEREÇO")
@@ -28,5 +29,8 @@ cidade = input("Cidade: ")
 estado = input("Estado: ")
 cadastroEndereco(rua,numero,complemento,bairro,cidade,estado)
 
+id = input("Insira o Id a ser pesquisado: ")
+pessoaEspecifica(id)
 
-
+def todosDados():
+    listarPessoas()

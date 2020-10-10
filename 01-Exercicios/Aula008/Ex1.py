@@ -10,8 +10,8 @@
 def cadastroPessoa(nome, sobrenome, idade):
     if idade < 18:
         print("Cadastro Negado, menor de 18 anos") 
-    else:
+    else: 
+        # dados_cadastrados_pessoa.append(nome, sobrenome, idade)
+        idPessoa = int(input("Id: "))
         dados_cadastrados_pessoa = [nome, sobrenome, idade]
-        idPessoa = 0
-        idPessoa += 1
         return idPessoa

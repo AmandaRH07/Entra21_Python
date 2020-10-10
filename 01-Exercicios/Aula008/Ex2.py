@@ -19,7 +19,6 @@ endereco = [rua, numero, comp, bairro, cidade, estado]
 #Chamada da função;
 enderecoCadastrado = cadastroEndereco(endereco)'''
 
-
 def cadastroEndereco(rua, numero, comp, bairro, cidade, estado):
     dados_cadastrados_endereco = [rua, numero, comp, bairro, cidade, estado]
     return "Endereço cadastrado com sucesso!"
