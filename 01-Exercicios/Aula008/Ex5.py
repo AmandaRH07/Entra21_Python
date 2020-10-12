@@ -8,34 +8,54 @@
 
 from Ex1 import cadastroPessoa
 from Ex2 import cadastroEndereco
-from Ex3 import listarPessoas
+from Ex3 import listarPessoas, pessoaEspecifica
 from Ex4 import listarEnderecos
 
 def cabecalho(tipo_de_cadastro):
-    print("\n**    CADASTRO DE {}     **".format(tipo_de_cadastro))
+    print("\n**    CADASTRO DE {}     **".format(tipo_de_cadastro))  
 
-cabecalho("PESSOA")
-nome = input("Nome: ")
-sobrenome = input("Sobrenome: ")
-idade = int(input("Idade: "))
-#idPessoa = int(input("Id: "))
-cadastroPessoa(nome,sobrenome,idade)
 
-cabecalho("ENDEREÇO")
-rua = input("Rua: ")
-numero = input("Número: ")
-complemento = input("Complemento: ")
-bairro = input("Bairro: ")
-cidade = input("Cidade: ")
-estado = input("Estado: ")
-cadastroEndereco(rua,numero,complemento,bairro,cidade,estado)
+def menu():
+    opcao = ''
+    while opcao != 4:
+        opcao = int(input("""
+        Cadastramento
+        \t 1. Cadastrar uma nova pessoa
+        \t 2. Busca dados pessoais por ID
+        \t 3. Buscar endereço por ID
+        \t 4. Listar e sair
+        Insira a opção escolhida: """)) 
+        if opcao == 1:
+            idPessoa = 0 
+            cabecalho("PESSOA")
+            nome = input("Nome: ")
+            sobrenome = input("Sobrenome: ")
+            idade = int(input("Idade: "))
+            if idade < 18:
+                print("Cadastro negado, menor de 18 anos")
+                pass
+            else: 
+                idPessoa = 1
+                cadastroPessoa(idPessoa,nome,sobrenome,idade)
 
-'''id = input("Insira o Id a ser pesquisado: ")
-pessoaEspecifica(id)'''
+                cabecalho("ENDEREÇO")
+                rua = input("Rua: ")
+                numero = input("Número: ")
+                complemento = input("Complemento: ")
+                bairro = input("Bairro: ")
+                cidade = input("Cidade: ")
+                estado = input("Estado: ")
+                cadastroEndereco(rua,numero,complemento,bairro,cidade,estado)
 
-def todosDados():
-    print("DADOS: ")
-    listarPessoas()
-    listarEnderecos()
-    
-todosDados()
+        elif opcao == 2:
+            print(f"EX5: {idPessoa}")
+            pessoaEspecifica(idPessoa)
+        elif opcao == 4:
+            print("\nDADOS: ")
+            cabecalho("PESSOA")
+            listarPessoas()
+            cabecalho("ENDEREÇO")
+            listarEnderecos()
+        else:
+            pass
+menu()

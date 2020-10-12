@@ -9,7 +9,10 @@ from Ex1 import cadastroPessoa, mostrarDadosPessoais
 def listarPessoas():
     mostrarDadosPessoais()
 
-'''def pessoaEspecifica(id):
-    if id == IdPessoa:
-        return 'entrou no pessoa especifica'
-        #listarPessoas()'''
+def pessoaEspecifica(idPessoa):
+    print(f"EX3: idpessoa {idPessoa}")
+    idEspecifico = input("Insira o ID a ser pesquisado: ")
+    print(f"EX3: id especifico {idEspecifico}")
+    if idEspecifico == idPessoa:
+        print('entrou no pessoa especifica') 
+        listarPessoas()

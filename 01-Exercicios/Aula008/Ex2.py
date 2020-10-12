@@ -6,6 +6,8 @@
 #---       a função deve retornar uma mensagem ao final de acordo com a situação
 #--- A função deve ser salva em um arquivo diferente do arquivo principal onde será chamada
 
+from Ex1 import cadastroPessoa
+
 '''
 #Função de cadastro;
 def cadastroEndereco(idPessoa, endereco) -> str:
@@ -34,12 +36,13 @@ def cadastroEndereco(rua, numero, comp, bairro, cidade, estado):
 
 def mostrarDadosDeEndereco():
     for i in enderecos:
-        print(i['rua'])
-        print(i['numero'])
-        print(i['complemento'])
-        print(i['bairro'])
-        print(i['cidade'])
-        print(i['estado'])
+        print(i)
+        print(f"RUA: {i['rua']}")
+        print(f"NUMERO: {i['numero']}")
+        print(f"COMPLEMENTO: {i['complemento']}")
+        print(f"BAIRRO: {i['bairro']}")
+        print(f"CIDADE: {i['cidade']}")
+        print(f"ESTADO: {i['estado']}")
 
 def id_Endereco(idPessoa, endereco) -> str:
     cadastrado = [idPessoa, endereco]

@@ -7,23 +7,25 @@
 #---       caso a pessoa tenha sido cadastrada com sucesso deve ser retornado um id 
 #--- A função deve ser salva em um arquivo diferente do arquivo principal onde será chamada
 
+# pessoa = {"id": id, "nome": nome, "sobrenome" : sobrenome}}
+# pessoas = [pessoa1, pessoa2]
+
 pessoas = []
-def cadastroPessoa(nome, sobrenome, idade):
-    pessoa = {}
+def cadastroPessoa(idPessoa, nome, sobrenome, idade):
+    pessoa = {"idPessoa": idPessoa}
     pessoa['nome'] = nome
     pessoa['sobrenome'] = sobrenome
     pessoa['idade'] = idade
-    if idade < 18:
-        print("Cadastro negado, menor de 18 anos")
-    else: 
-        # dados_cadastrados_pessoa.append(nome, sobrenome, idade)
-        idPessoa = int(input("Id: "))
-        pessoas.append(pessoa)
-        dados_cadastrados_pessoa = [nome, sobrenome, idade]
-        return idPessoa
+    for i in pessoas: 
+        pessoa['idPessoa'] = idPessoa + 1
+    pessoas.append(pessoa)
         
 def mostrarDadosPessoais():
     for i in pessoas:
-        print(i['nome'])
-        print(i['sobrenome'])
-        print(i['idade'])
+        print(i)
+        print(f"ID: {i['idPessoa']}")
+        print(f"NOME: {i['nome']}")
+        print(f"SOBRENOME: {i['sobrenome']}")
+        print(f"IDADE: {i['idade']}")
+        
+      
