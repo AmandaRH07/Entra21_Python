@@ -5,15 +5,25 @@
 #---       a função deve permitir o cadastro apenas de endereços com todos os dados preenchidos
 #---       a função deve retornar uma mensagem ao final de acordo com a situação
 #--- A função deve ser salva em um arquivo diferente do arquivo principal onde será chamada
+#--- Exercício 4  - Funções
+#--- Escreva uma função para listar endereços cadastrados:
+#---    a função deve retornar todos os endereços cadastrados na função do ex2
+#--- Escreva uma função para exibir um endereço específico:
+#        a função deve retornar um endereço cadastrado na função do ex2 filtrando por 
+#            id da pessoa
 
 from Ex1 import cadastroPessoa
 
 enderecos = []
+id_pessoa = 0
+
 def cadastroEndereco(rua, numero, comp, bairro, cidade, estado):
-    endereco = {}
+    global id_pessoa
+    id_pessoa += 1
+    endereco = {"id_pessoa": id_pessoa}
     endereco['rua'] = rua
     if (not rua):
-        return "Campo 'Rua' vazio! Não é possível cadastrar."
+        print("Campo 'Rua' vazio! Não é possível cadastrar.")
     endereco['numero'] = numero
     if (not numero):
         return "Campo 'Número' vazio! Não é possível cadastrar."
@@ -34,7 +44,7 @@ def cadastroEndereco(rua, numero, comp, bairro, cidade, estado):
 
 def mostrarDadosDeEndereco():
     for i in enderecos:
-        print(i)
+        print(f"ID: {i['id_pessoa']}")
         print(f"RUA: {i['rua']}")
         print(f"NUMERO: {i['numero']}")
         print(f"COMPLEMENTO: {i['complemento']}")

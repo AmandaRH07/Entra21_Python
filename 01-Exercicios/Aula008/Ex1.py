@@ -6,25 +6,37 @@
 #---       a função deve retornar uma mensagem caso a idade informada seja menor que 18
 #---       caso a pessoa tenha sido cadastrada com sucesso deve ser retornado um id 
 #--- A função deve ser salva em um arquivo diferente do arquivo principal onde será chamada
+#--- Exercício 3  - Funções
+#--- Escreva uma função para listar pessoas cadastradas:
+#---    a função deve retornar todas as pessoas cadastradas na função do ex1
+#--- Escreva uma função para exibir uma pessoa específica:
+#        a função deve retornar uma pessoa cadastrada na função do ex1 filtrando por id
 
 # pessoa = {"id": id, "nome": nome, "sobrenome" : sobrenome}}
 # pessoas = [pessoa1, pessoa2]
 
 pessoas = []
-def cadastroPessoa(idPessoa, nome, sobrenome, idade):
-    pessoa = {"idPessoa": idPessoa}
+id_pessoa = 0
+
+def cadastroPessoa(nome, sobrenome, idade):
+    global id_pessoa
+    id_pessoa += 1
+    pessoa = {"id_pessoa": id_pessoa}
     pessoa['nome'] = nome
     pessoa['sobrenome'] = sobrenome
     pessoa['idade'] = idade
-    for i in pessoas: 
-        pessoa['idPessoa'] = idPessoa + 1
     pessoas.append(pessoa)
+    return id_pessoa
          
 def mostrarDadosPessoais():
     for i in pessoas:
-        print(f"ID: {i['idPessoa']}")
+        print(f"ID: {i['id_pessoa']}")
         print(f"NOME: {i['nome']}")
         print(f"SOBRENOME: {i['sobrenome']}")
         print(f"IDADE: {i['idade']}")
-        
-      
+
+def pessoaEspecifica(id_pessoa):
+    id_especifico = input("Insira o ID a ser pesquisado: ")
+    if id_especifico == id_pessoa:
+        #print(mostrarDadosPessoais())
+        return mostrarDadosPessoais()

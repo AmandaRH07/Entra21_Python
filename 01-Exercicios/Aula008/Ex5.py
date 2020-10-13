@@ -6,14 +6,11 @@
 #---       o programa deve mostrar ao final os dados de todos as pessoas cadastradas 
 #                com seus respectivos endereços utilizando as funções do ex3 e ex4
 
-from Ex1 import cadastroPessoa
-from Ex2 import cadastroEndereco
-from Ex3 import listarPessoas, pessoaEspecifica
-from Ex4 import listarEnderecos, pesquisaEndereco
+from Ex1 import cadastroPessoa, mostrarDadosPessoais, pessoaEspecifica
+from Ex2 import cadastroEndereco, mostrarDadosDeEndereco
 
 def cabecalho(tipo_de_cadastro):
     print("\n**    CADASTRO DE {}     **".format(tipo_de_cadastro))  
-
 
 def menu():
     opcao = ''
@@ -26,7 +23,6 @@ def menu():
         \t 4. Listar e sair
         Insira a opção escolhida: """)) 
         if opcao == 1:
-            idPessoa = 0 
             cabecalho("PESSOA")
             nome = input("Nome: ")
             sobrenome = input("Sobrenome: ")
@@ -35,15 +31,13 @@ def menu():
                 print("Cadastro negado, menor de 18 anos")
                 pass
             else: 
-                idPessoa = 1
-                cadastroPessoa(idPessoa,nome,sobrenome,idade)
+                cadastroPessoa(nome,sobrenome,idade)
 
                 cabecalho("ENDEREÇO")
                 rua = input("Rua: ")
-                '''if rua.isspace:
-                    print("Rua não cadastrada, por favor, tente novamente! ")
-                    while rua.isspace:
-                        rua = input("Rua: ")'''
+                '''if rua.isspace():
+                    while rua.isspace():
+                        rua = input("Rua não cadastrada, tente novamente! Rua: ")'''             
                 numero = input("Número: ")
                 complemento = input("Complemento: ")
                 bairro = input("Bairro: ")
@@ -51,15 +45,15 @@ def menu():
                 estado = input("Estado: ")
                 cadastroEndereco(rua,numero,complemento,bairro,cidade,estado)
         elif opcao == 2:
-            pessoaEspecifica(idPessoa)
+            pessoaEspecifica(id_pessoa)
         elif opcao == 3:
-            pesquisaEndereco(idPessoa)
+            pesquisaEndereco(id_pessoa)
         elif opcao == 4:
             print("\nDADOS: ")
             cabecalho("PESSOA")
-            listarPessoas()
+            mostrarDadosPessoais()
             cabecalho("ENDEREÇO")
-            listarEnderecos()
+            mostrarDadosDeEndereco()
         else:
             pass
 menu()
