@@ -51,3 +51,11 @@ def mostrarDadosDeEndereco():
         print(f"BAIRRO: {i['bairro']}")
         print(f"CIDADE: {i['cidade']}")
         print(f"ESTADO: {i['estado']}")
+
+def pesquisaEndereco():
+    endereco_especifico = int(input("Insira o ID do endereço a ser pesquisado: "))
+    if (endereco_especifico < len(enderecos) or endereco_especifico > 0):
+        if id_pessoa == endereco_especifico:
+            mostrarDadosDeEndereco()
+        else:
+            print("Id não encontrado")

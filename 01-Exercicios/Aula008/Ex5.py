@@ -7,7 +7,7 @@
 #                com seus respectivos endereços utilizando as funções do ex3 e ex4
 
 from Ex1 import cadastroPessoa, mostrarDadosPessoais, pessoaEspecifica
-from Ex2 import cadastroEndereco, mostrarDadosDeEndereco
+from Ex2 import cadastroEndereco, mostrarDadosDeEndereco, pesquisaEndereco
 
 def cabecalho(tipo_de_cadastro):
     print("\n**    CADASTRO DE {}     **".format(tipo_de_cadastro))  
@@ -45,9 +45,9 @@ def menu():
                 estado = input("Estado: ")
                 cadastroEndereco(rua,numero,complemento,bairro,cidade,estado)
         elif opcao == 2:
-            pessoaEspecifica(id_pessoa)
+            pessoaEspecifica()
         elif opcao == 3:
-            pesquisaEndereco(id_pessoa)
+            pesquisaEndereco()
         elif opcao == 4:
             print("\nDADOS: ")
             cabecalho("PESSOA")

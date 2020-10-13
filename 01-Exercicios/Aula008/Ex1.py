@@ -35,8 +35,11 @@ def mostrarDadosPessoais():
         print(f"SOBRENOME: {i['sobrenome']}")
         print(f"IDADE: {i['idade']}")
 
-def pessoaEspecifica(id_pessoa):
-    id_especifico = input("Insira o ID a ser pesquisado: ")
-    if id_especifico == id_pessoa:
-        #print(mostrarDadosPessoais())
-        return mostrarDadosPessoais()
+def pessoaEspecifica():
+    id_especifico = int(input("Insira o ID a ser pesquisado: "))
+    if (id_especifico < len(pessoas) or id_especifico > 0):
+        if id_pessoa == id_especifico:
+            mostrarDadosPessoais()
+        else:
+            print("Id não encontrado")
+            
