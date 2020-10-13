@@ -4,15 +4,19 @@
 #--- Escreva uma função para exibir uma pessoa específica:
 #        a função deve retornar uma pessoa cadastrada na função do ex1 filtrando por id
 
-from Ex1 import cadastroPessoa, mostrarDadosPessoais
+from Ex1 import cadastroPessoa
 
 def listarPessoas():
     mostrarDadosPessoais()
 
 def pessoaEspecifica(idPessoa):
-    print(f"EX3: idpessoa {idPessoa}")
+    '''print(f"EX3: idpessoa {idPessoa}")
     idEspecifico = input("Insira o ID a ser pesquisado: ")
     print(f"EX3: id especifico {idEspecifico}")
     if idEspecifico == idPessoa:
         print('entrou no pessoa especifica') 
-        listarPessoas()
+        listarPessoas()'''
+    for i in range(len(pessoas)):
+        pessoa = pessoas[i]
+        if (idPessoa == pessoa.get("ID")):
+            return pessoa

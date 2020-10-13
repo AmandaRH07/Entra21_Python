@@ -9,7 +9,7 @@
 from Ex1 import cadastroPessoa
 from Ex2 import cadastroEndereco
 from Ex3 import listarPessoas, pessoaEspecifica
-from Ex4 import listarEnderecos
+from Ex4 import listarEnderecos, pesquisaEndereco
 
 def cabecalho(tipo_de_cadastro):
     print("\n**    CADASTRO DE {}     **".format(tipo_de_cadastro))  
@@ -40,16 +40,20 @@ def menu():
 
                 cabecalho("ENDEREÇO")
                 rua = input("Rua: ")
+                '''if rua.isspace:
+                    print("Rua não cadastrada, por favor, tente novamente! ")
+                    while rua.isspace:
+                        rua = input("Rua: ")'''
                 numero = input("Número: ")
                 complemento = input("Complemento: ")
                 bairro = input("Bairro: ")
                 cidade = input("Cidade: ")
                 estado = input("Estado: ")
                 cadastroEndereco(rua,numero,complemento,bairro,cidade,estado)
-
         elif opcao == 2:
-            print(f"EX5: {idPessoa}")
             pessoaEspecifica(idPessoa)
+        elif opcao == 3:
+            pesquisaEndereco(idPessoa)
         elif opcao == 4:
             print("\nDADOS: ")
             cabecalho("PESSOA")

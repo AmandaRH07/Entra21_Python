@@ -8,30 +8,28 @@
 
 from Ex1 import cadastroPessoa
 
-'''
-#Função de cadastro;
-def cadastroEndereco(idPessoa, endereco) -> str:
-    cadastrado = [idPessoa, endereco]
-    #CADASTRO apenas se todos os dados preenchidos
-    return "Endereço cadastrado com sucesso!"
-
-#Variável Global;
-endereco = [rua, numero, comp, bairro, cidade, estado]
-
-#Chamada da função;
-enderecoCadastrado = cadastroEndereco(endereco)'''
-
 enderecos = []
 def cadastroEndereco(rua, numero, comp, bairro, cidade, estado):
     endereco = {}
     endereco['rua'] = rua
+    if (not rua):
+        return "Campo 'Rua' vazio! Não é possível cadastrar."
     endereco['numero'] = numero
+    if (not numero):
+        return "Campo 'Número' vazio! Não é possível cadastrar."
     endereco['complemento'] = comp
+    if (not comp):
+        return "Campo 'Complemento' vazio! Não é possível cadastrar."
     endereco['bairro'] = bairro
+    if (not bairro):
+        return "Campo 'Bairro' vazio! Não é possível cadastrar."
     endereco['cidade'] = cidade
+    if (not cidade):
+        return "Campo 'Cidade' vazio! Não é possível cadastrar."
     endereco['estado'] = estado
+    if (not estado):
+        return "Campo 'Estado' vazio! Não é possível cadastrar."
     enderecos.append(endereco)
-    dados_cadastrados_endereco = [rua, numero, comp, bairro, cidade, estado]
     return "Endereço cadastrado com sucesso!"
 
 def mostrarDadosDeEndereco():
@@ -43,8 +41,3 @@ def mostrarDadosDeEndereco():
         print(f"BAIRRO: {i['bairro']}")
         print(f"CIDADE: {i['cidade']}")
         print(f"ESTADO: {i['estado']}")
-
-def id_Endereco(idPessoa, endereco) -> str:
-    cadastrado = [idPessoa, endereco]
-    #CADASTRO apenas se todos os dados preenchidos
-    return "Endereço cadastrado com sucesso!"

@@ -19,10 +19,9 @@ def cadastroPessoa(idPessoa, nome, sobrenome, idade):
     for i in pessoas: 
         pessoa['idPessoa'] = idPessoa + 1
     pessoas.append(pessoa)
-        
+         
 def mostrarDadosPessoais():
     for i in pessoas:
-        print(i)
         print(f"ID: {i['idPessoa']}")
         print(f"NOME: {i['nome']}")
         print(f"SOBRENOME: {i['sobrenome']}")
