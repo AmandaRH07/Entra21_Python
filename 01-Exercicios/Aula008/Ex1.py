@@ -18,7 +18,7 @@
 pessoas = []
 id_pessoa = 0
 
-def cadastroPessoa(nome, sobrenome, idade):
+def cadastro_Pessoa(nome, sobrenome, idade):
     global id_pessoa
     id_pessoa += 1
     pessoa = {"id_pessoa": id_pessoa}
@@ -28,18 +28,18 @@ def cadastroPessoa(nome, sobrenome, idade):
     pessoas.append(pessoa)
     return id_pessoa
          
-def mostrarDadosPessoais():
+def mostrar_Dados():
     for i in pessoas:
         print(f"ID: {i['id_pessoa']}")
-        print(f"NOME: {i['nome']}")
-        print(f"SOBRENOME: {i['sobrenome']}")
-        print(f"IDADE: {i['idade']}")
+        print(f"Nome: {i['nome']}")
+        print(f"Sobrenome: {i['sobrenome']}")
+        print(f"Idade: {i['idade']}")
 
-def pessoaEspecifica():
+def pesquisa_Pessoa():
     id_especifico = int(input("Insira o ID a ser pesquisado: "))
     if (id_especifico < len(pessoas) or id_especifico > 0):
         if id_pessoa == id_especifico:
-            mostrarDadosPessoais()
+            mostrar_Dados()
         else:
             print("Id não encontrado")
             

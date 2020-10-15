@@ -12,50 +12,37 @@
 #        a função deve retornar um endereço cadastrado na função do ex2 filtrando por 
 #            id da pessoa
 
-from Ex1 import cadastroPessoa
+from Ex1 import cadastro_Pessoa
 
 enderecos = []
 id_pessoa = 0
 
-def cadastroEndereco(rua, numero, comp, bairro, cidade, estado):
+def cadastro_Endereco(rua, numero, comp, bairro, cidade, estado):
     global id_pessoa
     id_pessoa += 1
     endereco = {"id_pessoa": id_pessoa}
     endereco['rua'] = rua
-    if (not rua):
-        print("Campo 'Rua' vazio! Não é possível cadastrar.")
     endereco['numero'] = numero
-    if (not numero):
-        return "Campo 'Número' vazio! Não é possível cadastrar."
-    endereco['complemento'] = comp
-    if (not comp):
-        return "Campo 'Complemento' vazio! Não é possível cadastrar."
+    endereco['comp'] = comp
     endereco['bairro'] = bairro
-    if (not bairro):
-        return "Campo 'Bairro' vazio! Não é possível cadastrar."
     endereco['cidade'] = cidade
-    if (not cidade):
-        return "Campo 'Cidade' vazio! Não é possível cadastrar."
     endereco['estado'] = estado
-    if (not estado):
-        return "Campo 'Estado' vazio! Não é possível cadastrar."
     enderecos.append(endereco)
-    return "Endereço cadastrado com sucesso!"
+    return id_pessoa
 
-def mostrarDadosDeEndereco():
+def mostrar_Endereco():
     for i in enderecos:
         print(f"ID: {i['id_pessoa']}")
-        print(f"RUA: {i['rua']}")
-        print(f"NUMERO: {i['numero']}")
-        print(f"COMPLEMENTO: {i['complemento']}")
-        print(f"BAIRRO: {i['bairro']}")
-        print(f"CIDADE: {i['cidade']}")
-        print(f"ESTADO: {i['estado']}")
+        print(f"Rua: {i['rua']}")
+        print(f"Número: {i['numero']}")
+        print(f"Complemento: {i['comp']}")
+        print(f"Bairro: {i['bairro']}")
+        print(f"Cidade: {i['cidade']}")
+        print(f"Estado: {i['estado']}")
 
-def pesquisaEndereco():
+def pesquisa_Endereco():
     endereco_especifico = int(input("Insira o ID do endereço a ser pesquisado: "))
-    if (endereco_especifico < len(enderecos) or endereco_especifico > 0):
-        if id_pessoa == endereco_especifico:
-            mostrarDadosDeEndereco()
-        else:
-            print("Id não encontrado")
+    if id_pessoa == endereco_especifico:
+        mostrar_Endereco()
+    else:
+        print("Id não encontrado")
