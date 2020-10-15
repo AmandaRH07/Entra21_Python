@@ -6,8 +6,8 @@
 #---       o programa deve mostrar ao final os dados de todos as pessoas cadastradas 
 #                com seus respectivos endereços utilizando as funções do ex3 e ex4
 
-from Ex1 import cadastro_Pessoa, mostrar_Dados, pesquisa_Pessoa
-from Ex2 import cadastro_Endereco, mostrar_Endereco, pesquisa_Endereco
+from Ex1 import cadastro_Pessoa, mostrar_Dados, pesquisa_Pessoa, pessoa, pessoas
+from Ex2 import cadastro_Endereco, mostrar_Endereco, pesquisa_Endereco, endereco, enderecos
 caracter = "_"
 
 #Definição de funções para cabeçalhos;
@@ -30,6 +30,15 @@ def opcoes():
     print(caracter * 48)
     print("**                MENU DE OPÇÕES              **")
     print(caracter * 48)
+
+def passando_Arquivo(pessoa, endereco):
+    pessoa_Endereco = {**pessoa, **endereco}
+    arquivo = open("cadastro.txt", "r+")
+    for pessoa in pessoas:
+        arquivo.write(f"ID: {pessoa['id_pessoa']}\nNome: {pessoa['nome']}\nSobrenome: {pessoa['sobrenome']}\nIdade: {pessoa['idade']}\n")
+    for endereco in enderecos:
+        arquivo.write(f"ID: {endereco['id_pessoa']}\nRua: {endereco['rua']}\nNumero: {endereco['numero']}\nComplemento:{endereco['comp']}\nCidade: {endereco['cidade']}\nEstado: {endereco['estado']}")
+    arquivo.close()
 
 #Desenvolvimento do menu principal e entradas do algoritmo;
 def menu():
@@ -94,6 +103,7 @@ def menu():
                 while(not estado):
                     estado = input("Campo 'Estado' vazio!\nCidade: ")
                 cadastro_Endereco(rua,numero,comp,bairro,cidade,estado)
+                passando_Arquivo(pessoa, endereco)
 
         elif (opcao == 2):
             pesquisa("ID")
@@ -107,5 +117,6 @@ def menu():
             lista()
             print("\nDADOS: ")
             mostrar_Dados()
-            mostrar_Dados()
+            mostrar_Endereco()
 menu()
+

@@ -15,6 +15,7 @@
 from Ex1 import cadastro_Pessoa
 
 enderecos = []
+endereco = {}
 id_pessoa = 0
 
 def cadastro_Endereco(rua, numero, comp, bairro, cidade, estado):

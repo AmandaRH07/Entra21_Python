@@ -16,6 +16,7 @@
 # pessoas = [pessoa1, pessoa2]
 
 pessoas = []
+pessoa = {}
 id_pessoa = 0
 
 def cadastro_Pessoa(nome, sobrenome, idade):
@@ -26,6 +27,7 @@ def cadastro_Pessoa(nome, sobrenome, idade):
     pessoa['sobrenome'] = sobrenome
     pessoa['idade'] = idade
     pessoas.append(pessoa)
+    dados_cadastrados_pessoa = [nome, sobrenome, idade]
     return id_pessoa
          
 def mostrar_Dados():
