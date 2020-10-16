@@ -17,6 +17,7 @@ from Ex1 import cadastro_Pessoa
 enderecos = []
 endereco = {}
 id_pessoa = 0
+id_igual = False
 
 def cadastro_Endereco(rua, numero, comp, bairro, cidade, estado):
     global id_pessoa
@@ -43,7 +44,22 @@ def mostrar_Endereco():
 
 def pesquisa_Endereco():
     endereco_especifico = int(input("Insira o ID do endereço a ser pesquisado: "))
+    
     if id_pessoa == endereco_especifico:
         mostrar_Endereco()
     else:
         print("Id não encontrado")
+    
+    arquivoDados = open("cadastro.txt", 'r')
+    for linha in arquivoDados:
+        lista_dados = linha.split(',')
+        if id_pessoa == endereco_especifico:
+            print(f""""Dados do Arquivo:
+            ID: {lista_dados[0]}
+            Rua: {lista_dados[1]}
+            Numero: {lista_dados[2]}
+            Complemento: {lista_dados[3]}
+            Bairro: {lista_dados[4]}
+            Cidade: {lista_dados[5]}
+            Estado: {lista_dados[6]}""")
+    arquivoDados.close()

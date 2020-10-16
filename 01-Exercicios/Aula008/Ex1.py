@@ -37,11 +37,30 @@ def mostrar_Dados():
         print(f"Sobrenome: {i['sobrenome']}")
         print(f"Idade: {i['idade']}")
 
+
 def pesquisa_Pessoa():
-    id_especifico = int(input("Insira o ID a ser pesquisado: "))
-    if (id_especifico < len(pessoas) or id_especifico > 0):
-        if id_pessoa == id_especifico:
+    id_especifico = input("Insira o ID a ser pesquisado: ")
+    
+    id_especifico_int = int(id_especifico)
+    
+    arquivo = open("cadastro.txt", 'r')
+
+    for linha in arquivo:
+        lista_dados = linha.split(',')
+        print(f"Lista dados = {lista_dados[0]}")
+        if lista_dados[0]== id_especifico_int:
+            print("entrou no if")
+            print(f""""Dados do Arquivo:
+            ID: {lista_dados[0]}
+            Nome: {lista_dados[1]}
+            Sobrenome: {lista_dados[2]}
+            Idade: {lista_dados[3]}""")
+    
+    if (id_especifico_int < len(pessoas) or id_especifico_int > 0):
+        if id_pessoa == id_especifico_int:
             mostrar_Dados()
         else:
             print("Id não encontrado")
+            
+    arquivo.close()
             

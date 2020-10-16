@@ -15,7 +15,7 @@ arquivo.close()
 arquivo = open("pessoa.txt", 'r')
 for linha in arquivo:
     linha_limpa = linha.strip() #-- limpa espaços em brando e caracteres de formatação (\n \t)
-    lista_dados = linha_limpa.split(';')
+    lista_dados = linha_limpa.split(',')
     print(f"nome:{lista_dados[0]} - sobrenome:{lista_dados[1]}, idade:{lista_dados[2]}")
 
 arquivo.close()

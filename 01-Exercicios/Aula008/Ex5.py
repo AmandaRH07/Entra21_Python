@@ -33,11 +33,11 @@ def opcoes():
 
 def passando_Arquivo(pessoa, endereco):
     pessoa_Endereco = {**pessoa, **endereco}
-    arquivo = open("cadastro.txt", "r+")
+    arquivo = open("cadastro.txt", "w+")
     for pessoa in pessoas:
-        arquivo.write(f"ID: {pessoa['id_pessoa']}\nNome: {pessoa['nome']}\nSobrenome: {pessoa['sobrenome']}\nIdade: {pessoa['idade']}\n")
+        arquivo.write(f"ID: {pessoa['id_pessoa']},\nNome: {pessoa['nome']},\nSobrenome: {pessoa['sobrenome']},\nIdade: {pessoa['idade']}\n")
     for endereco in enderecos:
-        arquivo.write(f"ID: {endereco['id_pessoa']}\nRua: {endereco['rua']}\nNumero: {endereco['numero']}\nComplemento:{endereco['comp']}\nCidade: {endereco['cidade']}\nEstado: {endereco['estado']}")
+        arquivo.write(f"ID: {endereco['id_pessoa']},\nRua: {endereco['rua']},\nNumero: {endereco['numero']},\nComplemento:{endereco['comp']},\nBairro: {endereco['bairro']},\nCidade: {endereco['cidade']},\nEstado: {endereco['estado']}\n")
     arquivo.close()
 
 #Desenvolvimento do menu principal e entradas do algoritmo;
@@ -119,4 +119,3 @@ def menu():
             mostrar_Dados()
             mostrar_Endereco()
 menu()
-
