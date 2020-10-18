@@ -35,9 +35,9 @@ def passando_Arquivo(pessoa, endereco):
     pessoa_Endereco = {**pessoa, **endereco}
     arquivo = open("cadastro.txt", "w+")
     for pessoa in pessoas:
-        arquivo.write(f"ID: {pessoa['id_pessoa']},\nNome: {pessoa['nome']},\nSobrenome: {pessoa['sobrenome']},\nIdade: {pessoa['idade']}\n")
+        arquivo.write(f"{pessoa['id_pessoa']},{pessoa['nome']},{pessoa['sobrenome']},{pessoa['idade']},")
     for endereco in enderecos:
-        arquivo.write(f"ID: {endereco['id_pessoa']},\nRua: {endereco['rua']},\nNumero: {endereco['numero']},\nComplemento:{endereco['comp']},\nBairro: {endereco['bairro']},\nCidade: {endereco['cidade']},\nEstado: {endereco['estado']}\n")
+        arquivo.write(f"{endereco['id_pessoa']},{endereco['rua']},{endereco['numero']},{endereco['comp']},{endereco['bairro']},{endereco['cidade']},{endereco['estado']}")
     arquivo.close()
 
 #Desenvolvimento do menu principal e entradas do algoritmo;

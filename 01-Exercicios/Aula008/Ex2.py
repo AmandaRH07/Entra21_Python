@@ -43,23 +43,24 @@ def mostrar_Endereco():
         print(f"Estado: {i['estado']}")
 
 def pesquisa_Endereco():
-    endereco_especifico = int(input("Insira o ID do endereço a ser pesquisado: "))
-    
-    if id_pessoa == endereco_especifico:
-        mostrar_Endereco()
-    else:
-        print("Id não encontrado")
-    
-    arquivoDados = open("cadastro.txt", 'r')
-    for linha in arquivoDados:
-        lista_dados = linha.split(',')
-        if id_pessoa == endereco_especifico:
+    endereco_especifico = input("Insira o ID do endereço a ser pesquisado: ")
+    arquivo = open("cadastro.txt", 'r')
+    if int(endereco_especifico) < len(enderecos) or (int(endereco_especifico) > 0):
+        if id_pessoa == (int(endereco_especifico)):
+            mostrar_Endereco()
+        else:
+            print("Id não encontrado")
+    for linha in arquivo:
+        limpa_linha = linha.strip()
+        lista_dados = limpa_linha.split(',')
+        if endereco_especifico == lista_dados[4]:
             print(f""""Dados do Arquivo:
-            ID: {lista_dados[0]}
-            Rua: {lista_dados[1]}
-            Numero: {lista_dados[2]}
-            Complemento: {lista_dados[3]}
-            Bairro: {lista_dados[4]}
-            Cidade: {lista_dados[5]}
-            Estado: {lista_dados[6]}""")
-    arquivoDados.close()
+            ID: {lista_dados[4]}
+            Rua: {lista_dados[5]}
+            Numero: {lista_dados[6]}
+            Complemento: {lista_dados[7]}
+            Bairro: {lista_dados[8]}
+            Cidade: {lista_dados[9]}
+            Estado: {lista_dados[10]}""")
+    
+    arquivo.close()
